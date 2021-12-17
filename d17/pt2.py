@@ -28,10 +28,6 @@ def path_hits_target(target, path):
   return False
 
 
-def max_y(path):
-  return max(point[1] for point in path)
-
-
 def run():
   with open(SOURCE_FILE, 'r') as f:
     line = f.readline().strip()
