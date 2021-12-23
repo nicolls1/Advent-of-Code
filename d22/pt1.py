@@ -25,7 +25,7 @@ def get_intersecting_region(region1, region2):
 def get_overlapping_regions(existing_regions, positive_region, region):
   new_regions = []
   for existing_positive_region, existing_region in existing_regions:
-    # New positive overlaps negative -> add if previous negative
+    # New positive overlaps negative -> add positive for overlapping region
     if (not existing_positive_region) and positive_region:
       if is_intersecting(existing_region, region):
         new_regions.append((True, get_intersecting_region(existing_region, region)))
@@ -40,7 +40,7 @@ def get_overlapping_regions(existing_regions, positive_region, region):
       if is_intersecting(existing_region, region):
         new_regions.append((False, get_intersecting_region(existing_region, region)))
 
-    # 2 positives overlap, need to add a negative for region overlapping
+    # 2 positives overlap -> add negative for region overlapping
     if existing_positive_region and positive_region:
       if is_intersecting(existing_region, region):
         new_regions.append((False, get_intersecting_region(existing_region, region)))
