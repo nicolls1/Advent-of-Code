@@ -3,7 +3,7 @@ from collections import defaultdict
 from dataclasses import dataclass
 from typing import Any
 
-SOURCE_FILE = 'd23/numbers.txt'
+SOURCE_FILE = 'numbers.txt'
 AMPHIPODS = ['A', 'B', 'C', 'D']
 AMPHIPODS_SCORES = {
   'A': 1,
