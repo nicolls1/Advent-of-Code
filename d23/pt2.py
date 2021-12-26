@@ -1,7 +1,6 @@
 import copy
 import heapq
 import sys
-import time
 from collections import defaultdict
 from dataclasses import dataclass
 from typing import Any
@@ -346,9 +345,7 @@ def run():
         amphipod for amphipod, positions in amphipod_end_positions.items() if node.position in positions)
 
   board = Board(nodes, amphipod_end_positions)
-  start = time.time()
   print(find_all_paths(board))
-  print(time.time() - start)
 
 
 if __name__ == '__main__':
