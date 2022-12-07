@@ -59,13 +59,10 @@ def read_file(f: TextIO):
 
   while True:
     line = f.readline().strip()
-    # print('line', line)
     if len(line) == 0:
       return root
     command_parts = line.split(' ')
-    # print('current before', current.name, current.children.keys())
     current = COMMANDS[command_parts[1]](command_parts, current, f)
-    # print('current after', current.name, current.children.keys())
 
 
 def sum_sizes(root: Folder):
