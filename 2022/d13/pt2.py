@@ -35,7 +35,6 @@ DIVIDERS = [[[2]], [[6]]]
 
 
 def run():
-  # decoder packets
   packets = [*DIVIDERS]
   with open(SOURCE_FILE, 'r') as f:
     while True:
