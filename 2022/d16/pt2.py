@@ -123,11 +123,8 @@ def run():
         states.append(next_state)
 
   end_states.sort(key=lambda state: state['flow'], reverse=True)
-  print(len(end_states), end_states[:10])
   max_combo_total = 0
   for idx, end_state1 in enumerate(end_states):
-    if idx % 1000 == 0:
-      print(idx)
     for end_state2 in end_states[idx:]:
       if len(end_state1['open_valves'].intersection(end_state2['open_valves'])) == 0:
         if end_state1['flow'] + end_state2['flow'] > max_combo_total:
